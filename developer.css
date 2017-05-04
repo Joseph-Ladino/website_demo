@@ -1,0 +1,89 @@
+.required {
+  color: red;
+}
+
+#signupBody {
+  color: black;
+}
+
+.nav li {
+  top: 6px;
+  font-size: 30px;
+  display: inline-block;
+  width: suto;
+  color: green;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  right: 18px;
+  border-radius: 5%;
+  border:2px double red;
+}
+
+.nav li:hover {
+  background-color: black;
+  color: red;
+}
+
+.nav-bar {
+  position: fixed;
+}
+
+.nav {
+  left: 10%;
+  position: relative;
+  background-color: gray;
+  height: 50px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body, html {
+  color: gray;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+}
+
+.twentyp {
+  height: 20%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  border-bottom: 2.5px solid black;
+  border-top: 2.5px solid black;
+}
+
+.rainbow-red {
+  background-color: red;
+}
+
+.rainbow-orange {
+  background-color: orange;
+}
+
+.rainbow-green {
+  background-color: green;
+}
+
+.rainbow-blue {
+  background-color: blue;
+}
+
+.rainbow-purple {
+  background-color: purple;
+}
+
+.mainDiv {
+  position: absolute;
+  left: 43%;
+  width: 235px;
+}
+
+.mainHeader {
+  font-size: 60px;
+}
