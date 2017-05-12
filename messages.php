@@ -14,10 +14,10 @@
 
     if(empty($errors)) {
       $usr = mysqli_real_escape_string($dbc, trim($_POST['to_user']));
-      include('encrypted.php');
+      include('curnt_usr.php');
       $formatted_usr = format_space($usr);
       $msg = mysqli_real_escape_string($dbc, trim($_POST['message']));
-      $message = "INSERT INTO $formatted_usr(messages) VALUES('$msg')";
+      $message = "INSERT INTO $formatted_usr(sent_from, messages) VALUES('$current_user', '$msg')";
       mysqli_query($dbc, $message);
       $sent = mysqli_affected_rows($dbc);
       mysqli_close($dbc);
