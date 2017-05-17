@@ -11,12 +11,16 @@
   <head>
     <title></title>
     <link href="#" rel="stylesheet" type="text/CSS">
+    <script type="text/javascript">function open_message(mesg) {
+      alert (mesg);
+      mark_read();
+    }</script>
   </head>
   <body>
     <div class="inbox">
       <?php while ($msgs = mysqli_fetch_array($fetch_messages)) {
-        for ($i = 3; $i < count($msgs); $i++) {
-          echo $msgs['messages'].' | from '.$msgs['sent_from'].'<br />';
+        for ($i = 5; $i < count($msgs); $i++) {
+          echo '<span style="cursor: pointer;" onclick="open_message('."'".$msgs['messages']."'".')">'.$msgs['subject'].' | from '.$msgs['sent_from'].'</span><br />';
         }
       } ?>
     </div>

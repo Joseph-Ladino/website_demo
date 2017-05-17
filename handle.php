@@ -44,7 +44,7 @@
 
             //creates new user a personal database
             $nut = "CREATE TABLE ".$modded_username." (
-              messages VARCHAR(1000) NOT NULL
+              messages VARCHAR(1000) NOT NULL, sent_from VARCHAR(50) NOT NULL, subject VARCHAR(150) NOT NULL, unread VARCHAR(5) NOT NULL
               )";
             mysqli_query($dbc, $nut);
 
