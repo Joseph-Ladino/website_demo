@@ -3,10 +3,14 @@
     include('connect.php');
     $errors = array();
     if(!empty($_POST['to_user'])) {
-      if(!empty($_POST['message'])) {
+      if (!empty($_POST['subject'])) {
+        if(!empty($_POST['message'])) {
 
+        } else {
+          $errors[] = 'Please specify a message!';
+        }
       } else {
-        $errors[] = 'Please specify a message!';
+        $errors[] = 'Please specify a subject!';
       }
     } else {
       $errors[] = 'Please specify who the message should be sent to!';
@@ -16,8 +20,9 @@
       $usr = mysqli_real_escape_string($dbc, trim($_POST['to_user']));
       include('curnt_usr.php');
       $formatted_usr = format_space($usr);
+      $subj = mysqli_real_escape_string($dbc, trim($_POST['subject']));
       $msg = mysqli_real_escape_string($dbc, trim($_POST['message']));
-      $message = "INSERT INTO $formatted_usr(sent_from, messages) VALUES('$current_user', '$msg')";
+      $message = "INSERT INTO $formatted_usr(sent_from, subject, messages, unread) VALUES('$current_user','$subj', '$msg', 'true')";
       mysqli_query($dbc, $message);
       $sent = mysqli_affected_rows($dbc);
       mysqli_close($dbc);
@@ -59,6 +64,9 @@
       <form action="messages.php" method="post">
         <p>
           To: <input type="text" name="to_user" maxlength="50" size="20" />
+        </p>
+        <p>
+          Subject: <input type="text" name="subject" maxlength="150" size="25" />
         </p>
         <p>
           Message: <br />
