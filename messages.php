@@ -22,7 +22,7 @@
       $formatted_usr = format_space($usr);
       $subj = mysqli_real_escape_string($dbc, trim($_POST['subject']));
       $msg = mysqli_real_escape_string($dbc, trim($_POST['message']));
-      $message = "INSERT INTO $formatted_usr(sent_from, subject, messages, notread) VALUES('$current_user','$subj', '$msg', 'true')";
+      $message = "INSERT INTO $formatted_usr(sent_from, subject, messages, unread) VALUES('$current_user','$subj', '$msg', 'true')";
       mysqli_query($dbc, $message);
       $sent = mysqli_affected_rows($dbc);
       mysqli_close($dbc);
