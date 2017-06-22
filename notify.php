@@ -1,7 +1,7 @@
 <?php
-  include("curnt_user.php");
+  include("curnt_usr.php");
   include("connect.php");
-  function alert($mesg) {
-    mysqli_query($dbc, "INSERT INTO $formatted_user(messages, sent_from) VALUES($mesg, 'Computer')");
-  }
+
+  $q = mysqli_query($dbc, "SELECT * FROM $formatted_user WHERE unread='true'");
+  $num_of_unread = mysqli_num_rows($q);
  ?>
