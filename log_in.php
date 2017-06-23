@@ -16,7 +16,7 @@ include('connect.php');
         if($lgn_password == $usr_password) {
           $modded_usr_name = format_space($usr_name);
           overwriteCookie($modded_usr_name);
-          echo '<script type="text/javascript">alert("Welcome back, '.$usr_name.'!")</script>';
+          echo '<script type="text/javascript">alert("Welcome back to MyPhpWebsite, '.$usr_name.'!")</script>';
         } else {
           echo '<h3 class="important"><b>ERROR: Incorrect Password</b></h3>';
         }
