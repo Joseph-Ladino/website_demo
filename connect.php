@@ -1,5 +1,4 @@
 <?php
-  echo $_SERVER['REQUEST_URI'];
   if(strpos($_SERVER['REQUEST_URI'], 'my_projects')) {
     $dbparts = array('host'=>'localhost', 'user'=>'root', 'pass'=>'', 'path'=>'practice');
     $dbname = $dbparts['path'];
