@@ -8,7 +8,7 @@
     <title>Chatroom</title>
     <?php
       $fp = fopen('chatroom1.php', 'a');
-      fwrite($fp, '<h1>Welcome to the chatroom, '.$current_user.'</h1>');
+      fwrite($fp, '<h1>Welcome to the chatroom, '.$formatted_user.'</h1>');
     ?>
   </head>
 </html>
