@@ -11,6 +11,6 @@
     setcookie('currentuser', ' ', time() - 31536000, '/');
   }
   $encrypted_user = $_COOKIE['currentuser'];
-  $current_user = decrypt($encrypted_user);
+  $current_user = format_undrscr(decrypt($encrypted_user));
   $formatted_user = format_space($current_user);
  ?>
