@@ -1,6 +1,6 @@
 <?php
   include('curnt_usr.php');
-  if($current_user != '' && $current_user != null) {
+  if($formatted_user != '' && $formatted_user != null) {
     $link = 'logout.php';
     $account = 'Logout';
   } else {
