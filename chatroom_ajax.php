@@ -1,8 +1,11 @@
 <?php
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $msg = htmlspecialchars($_POST['msg']);
-    $fp = fopen('chatroom1_log.html', 'a');
-    fwrite($fp, $msg.'<br />');
-    fclose($fp);
+    if($_POST['msg']) {
+      include('curnt_usr.php');
+      $msg = htmlspecialchars($_POST['msg']);
+      $fp = fopen('chatroom1_log.html', 'a');
+      fwrite($fp, '<b>'.$current_user.':</b><span> '.$msg.'</span><br />'.PHP_EOL);
+      fclose($fp);
+    }
   }
 ?>
