@@ -1,15 +1,25 @@
 function sendMessage() {
   var msg = $('#msgInput').val();
-  $.post(
-    "chatroom_ajax.php",
-    {'msg': msg},
-    function(response) {
-      $('html').prepend(response);
-    }
-  );
-  $('#msgInput').val('');
+  if (msg !== null && msg !== ' ') {
+    $.post(
+      "chatroom_ajax.php",
+      {'msg': msg},
+      function(response) {
+        $('html').prepend(response);
+      }
+    );
+    $('#msgInput').val('');
+  } else {
+    alert('Please enter a message!');
+    $('#msgInput').val('')
+  }
 }
 $('#send').click(sendMessage);
+$(document).keydown(function(e){
+  if(e.which == 13) {
+    sendMessage();
+  }
+});
 function load_chat() {
   var oldScroll = $('#chat').prop("scrollHeight");
   $.ajax({
@@ -24,7 +34,7 @@ function load_chat() {
     }
   });
 }
-setInterval(load_chat, 1500);
+setInterval(load_chat, 1000);
 function leaveChat() {
   $.post(
     'chatroom1.php',

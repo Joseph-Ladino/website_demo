@@ -17,6 +17,10 @@
     echo $sign_in;
   }
   if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['leave'] == 'true') {
+    $chat_msg = '<b class="alert">'.$current_user.' has left the chat.</b><br />'.PHP_EOL;
+    $fp = fopen('chatroom1_log.html', 'a');
+    fwrite($fp, $chat_msg);
+    fclose($fp);
     session_destroy();
   }
 ?>
