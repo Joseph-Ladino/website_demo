@@ -1,0 +1,13 @@
+#chat {
+  height: 450px;
+  width: 550px;
+  border: 2px solid black;
+  display: block;
+  padding: 0;
+}
+
+#send, #msgInput {
+  position: relative;
+  width: auto;
+  padding: 0;
+}
