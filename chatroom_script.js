@@ -3,10 +3,7 @@ function sendMessage() {
   if (msg !== null && msg !== ' ') {
     $.post(
       "chatroom_ajax.php",
-      {'msg': msg},
-      function(response) {
-        $('html').prepend(response);
-      }
+      {'msg': msg}
     );
     $('#msgInput').val('');
   } else {

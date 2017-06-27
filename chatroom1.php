@@ -32,17 +32,19 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
   <body>
-    <div id="chat">
-      <?php
-        $open_chat = fopen('chatroom1_log.html', 'r');
-        $chat_contents = fread($open_chat, filesize('chatroom1_log.html'));
-        fclose($open_chat);
-        echo $chat_contents;
-      ?>
+    <div id="chatWrapper">
+      <div id="chat">
+        <?php
+          $open_chat = fopen('chatroom1_log.html', 'r');
+          $chat_contents = fread($open_chat, filesize('chatroom1_log.html'));
+          fclose($open_chat);
+          echo $chat_contents;
+        ?>
+      </div>
+      <input id="msgInput" placeholder="Enter message" />
+      <input id="send" type="button" value="Send Message" />
+      <input id="leaveChat" type="button" value="Leave Chat" />
     </div>
-    <input id="msgInput" placeholder="Enter message" />
-    <input id="send" type="button" value="Send Message" />
-    <input id="leaveChat" type="button" value="Leave Chat" />
     <script type="text/javascript" src="chatroom_script.js"></script>
   </body>
 </html>
