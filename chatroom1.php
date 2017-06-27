@@ -6,7 +6,7 @@
     loginscreen();
   } elseif(isset($_COOKIE['currentuser']) && isset($_SESSION['joined'])) {
   } else {
-    $chat_msg = '<b class="alert">'.$formatted_user.' has joined the chat.</b><br />'.PHP_EOL;
+    $chat_msg = '<b class="alert">'.$current_user.' has joined the chat.</b><br />'.PHP_EOL;
     $fp = fopen('chatroom1_log.html', 'a');
     fwrite($fp, $chat_msg);
     fclose($fp);
