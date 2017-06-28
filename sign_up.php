@@ -5,7 +5,7 @@
     <script src="https:code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
   <body id="signupBody">
-    <form action="handle.php" method="post">
+    <form action="handle.php" method="post" accept-charset="ASCII">
       <p>
         Username (Only Characters: "0-9", "a-z", "A-Z", "$", and "_" are allowed!)<span class="required">*</span>:
         <input type="text" id="usrname" name="usrname" size="20" maxlength="50" />
