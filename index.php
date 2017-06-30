@@ -35,7 +35,8 @@
           <li><a href="manage_account.php">Manage Account</a></li>
           <li><a href="messages.php">Send Message</a></li>
           <li><a href="inbox.html" id="inbox" title="<?php echo $title; ?>">Inbox<?php echo $nue; ?></a></li>
-          <li><a href="chatroom1.php">Chatroom</a></li>
+          <li><a href="chatroom1.php">Chatroom 1</a></li>
+          <li><a href="chatroom2.php">Chatroom 2</a></li>
         </ul>
       </div>
   </div>

@@ -5,8 +5,13 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   </head>
   <body>
-    <input type="text" id="friend" />
+    <h1>Friends</h1>
+    <h4 style="display: inline;">Add New Friends</h4>
     <br />
+    <input type="text" id="friend" placeholder="Enter a user's name" maxlength="50" />
+    <br />
+    <br />
+    <h4 style="display: inline;">Current Friends</h4>
     <div id="friendWrapper"></div>
     <script type="text/javascript">
       function updateFriendList() {
@@ -29,6 +34,7 @@
             updateFriendList();
             confirm(response);
             //$('#friendWrapper').append(response);
+            $('#friend').val('');
           }
         });
       }

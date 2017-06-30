@@ -42,11 +42,19 @@
             }
             mysqli_query($dbc, "INSERT INTO images(user, link) VALUES('$modded_username', '$default_image')");
 
-            //creates new user a personal database
+            //creates new user a personal table
+            //nut stands for New User Table
             $nut = "CREATE TABLE ".$modded_username." (
               `mesg_id` BIGINT NOT NULL AUTO_INCREMENT , PRIMARY KEY (`mesg_id`), messages VARCHAR(1000) NOT NULL, sent_from VARCHAR(50) NOT NULL, subject VARCHAR(150) NOT NULL, unread VARCHAR(5) NOT NULL
               )";
             mysqli_query($dbc, $nut);
+
+            //creates user a friends table
+            //nft stands for New Friends Table
+            $nft = "CREATE TABLE `".$modded_username."-friends` (
+              `user` VARCHAR(50) NULL
+              )";
+            mysqli_query($dbc, $nft);
 
             //tells user account was made sucessfully
             echo '<script type="text/javascript">alert("Account Made Succesfully! Please sign in on home screen.");</script>';

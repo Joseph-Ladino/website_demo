@@ -1,5 +1,5 @@
 <?php
-  $chat = "chatroom1";
+  $chat = "chatroom2";
   include('curnt_usr.php');
   session_start();
   if(!isset($_COOKIE['currentuser'])) {
@@ -45,7 +45,7 @@
       <input id="send" type="button" value="Send Message" />
       <input id="leaveChat" type="button" value="Leave Chat" />
     </div>
-    <script type="text/javascript">var chat = "chatroom1";</script>
+    <script type="text/javascript">var chat = "chatroom2";</script>
     <script type="text/javascript" src="chatroom_script.js"></script>
   </body>
 </html>
